@@ -7,6 +7,7 @@ const int BUTTON=2;    //The Button is connected to pin 2
 void setup() {
   // put your setup code here, to run once:
   randomSeed(analogRead(A0));
+  Serial.begin(9600); //Serial Port at 9600 baud
 
 }
 
@@ -16,4 +17,6 @@ void loop() {
   analogWrite(GLED, random(256));
   analogWrite(BLED, random(256));
   delay(1000);  
+  Serial.print("random: ");  
+  Serial.println(random(256));
 }
