@@ -57,6 +57,7 @@ void loop()
   int light = analogRead(A0);
   
   lcd.setCursor(0,0);
+  lcd.clear();
   lcd.write(byte(0)); // LCD에 스마일 출력
   lcd.write(byte(1)); // LCD에 로봇 출력
   lcd.print(" Light: ");
