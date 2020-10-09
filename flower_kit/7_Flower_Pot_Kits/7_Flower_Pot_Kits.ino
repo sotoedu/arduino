@@ -11,6 +11,7 @@ int Green = 11;                             // 신호등 모듈 Green핀 설정
 
 void setup() {
   lcd.init();
+  Serial.begin(9600);
   lcd.backlight();                          // 백라이트 ON
   pinMode(Relaypin1, OUTPUT);               // 릴레이 제어 1번핀을 출력으로 설정
   pinMode(Red, OUTPUT);                     // Red 출력핀 설정
@@ -23,6 +24,7 @@ void loop() {
 }
 void Flower_kit_on() {
   int Soil_moisture = analogRead(A1);  
+  Serial.println(Soil_moisture);            //토양수분감지모듈의 아날로그 값 출력
         
   if (Soil_moisture > 800 )                 //수분 값이 900 초과의 조건
   {
