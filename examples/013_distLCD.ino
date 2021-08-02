@@ -1,105 +1,50 @@
-/*
-Exploring Arduino - Code Listing 10-2: LCD Updating Progress Bar Code
-http://www.exploringarduino.com/content/ch10
-
-Copyright 2013 Jeremy Blum ( http://www.jeremyblum.com )
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License v3 as published by
-the Free Software Foundation.
+/* 
+위의 코드는 bitelab 블로그의 원작자가 만든 코드입니다. 
+필요하신 부분이 있으면 사용하시면 됩니다.
+사용하기 전에 댓글을 남겨 주시면 감사하겠습니다. 
+https://blog.naver.com/bitelab
 */
 
-//LCD with Progress Bar
+#include <Wire.h>                     // i2C 통신을 위한 라이브러리
+#include <LiquidCrystal_I2C.h>        // LCD 2004 I2C용 라이브러리
+LiquidCrystal_I2C lcd(0x27,16,2);     //  0x3F or 0x27를 선택하여 주세요. 작동이 되지 않는 경우 0x27로 바꾸어주세요. 확인결과 0x3f가 작동하지 않을 수 있습니다.
+//고유주소가 LCD마다 다르기 때문입니다.
 
-//Include the library code:
-#include <LiquidCrystal.h>
+#define trigPin1 8  // 초음파 발신핀 define은 쉽게말하면, 숫자의 이름을 정의해주는것. 
+#define echoPin1 9  // 초음파 수신핀
 
-//Initialize the library with the numbers of the interface pins
-const int Rs = 12;
-const int E = 11;
-const int D4 = 2;
-const int D5 = 3;
-const int D6 = 4;
-const int D7 = 5;
+//변수를 설정합니다. 
+long duration1, distance1;
 
-// output control pins
-#define LCD_CONTRAST_PIN 6
-
-LiquidCrystal lcd(Rs, E, D4, D5, D6, D7);
-
-byte smile[8] = {                          // 스마일 패턴
-
-    B00000, B10001, B00000, B00000, B10001, B01110, B00000, B00000
-
-};
-
-byte robot[8] = {                         // 로봇 패턴
-
-    B01110, B01110, B01110, B10100, B11111, B00101, B11100, B10111
-
-};
-
-//초음파센서 trig, echo핀 설정
-const int distTrigPin = 8;
-const int distEchoPin = 9;
-
-void setup()
+void setup() 
 {
-  analogWrite(LCD_CONTRAST_PIN, 50); //set some contrast
-  //Set up the LCDs number of columns and rows: 
-  lcd.begin(16, 2);
-  // Print a message to the LCD.
-  lcd.print("Smart Farm");
-  lcd.createChar(0, smile); // 사용자정의 문자 생성(스마일)
-  lcd.createChar(1, robot); // 사용자정의 문자 생성(로봇)
+  pinMode(trigPin1,OUTPUT);   // trig를 출력 모드로 설정
+  pinMode(echoPin1,INPUT);    // echo를 입력모드로 설정
 
-  pinMode(distTrigPin, OUTPUT);
-  pinMode(distEchoPin, INPUT);
+  Serial.begin(9600);        //시리얼 프린트 시작
+  lcd.init();                // LCD 초기화
+  lcd.backlight();           // 백라이트 켜기
 
-  delay(3000);          //wait
- 
 }
 
-void loop()
+void loop() 
 {
-  //거리 측정
-  digitalWrite(distTrigPin, HIGH); //스위치 온
-  // 1sec = 1000 ms, 1ms = 1000 microSec
+  //초음파 센서를 한번 초기화 하는 과정입니다. 마치 껏다 켯다를 하면서 거리를 초기화합니다.
+  digitalWrite(trigPin1, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin1, HIGH);
   delayMicroseconds(10);
-  digitalWrite(distTrigPin, LOW); //잠깐 쉬고 바로 꺼줌
- 
-  //pulseIn: pin이 HIGH가 될 때까지의 시간을 구함
-  //최대 1초까지 대기, 대기 중 HIGH가 안된다면 0으로 반환
-  long duration = pulseIn(distEchoPin, HIGH);
-  if(duration == 0) {
-    return;
-  }
+  digitalWrite(trigPin1, LOW);
+  duration1 = pulseIn(echoPin1, HIGH);
+  distance1= duration1*0.034/2;
 
-  // 29.1를 나누면 cm단위, 왕복이기 때문에 58.2
-  long distance = duration / 58.2;
-  
-  lcd.setCursor(0,0);
   lcd.clear();
-  lcd.write(byte(0)); // LCD에 스마일 출력
-  lcd.write(byte(1)); // LCD에 로봇 출력
-  lcd.print(" Dist: ");
-  lcd.print(distance); 
-  lcd.print(" CM");
-  //Move cursor to second line
-  lcd.setCursor(0,1);
-  //Clear the line each time it reaches the end
-  //with 16 " " (spaces)
-  lcd.print("                ");  
-  
-  //Iterate through each character on the second line
-  for (int i = 0; i<8; i++)
-  {
-    //Iterate through each progress value for each character
-    for (int j=0; j<5; j++)
-    {
-      lcd.setCursor(i, 1); //Move the cursor to this location
-      lcd.write(j);        //update progress bar
-      delay(100);          //wait
-    }  
-  }
-}
+  lcd.setCursor(1,0);
+  lcd.print("Distance Check");
+  lcd.setCursor(4,1);
+  lcd.print(distance1); lcd.print(" cm");
+  delay(1000);
+  lcd.setCursor(1,3);
+  lcd.print("Warning from crash!");
 
+}
