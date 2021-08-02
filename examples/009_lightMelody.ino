@@ -17,6 +17,11 @@ void setup()
 {
   Serial.begin(9600);    //Serial Port at 9600 baud
   
+  
+}
+
+void loop()
+{
   for (int i = 0; i < 10; i++)
   {
     int light = analogRead(LIGHT);                  //read the light sensor
@@ -28,11 +33,6 @@ void setup()
     Serial.print("light: ");  
     Serial.println(light);
   }
-}
-
-void loop()
-{
-  
   
 }
 
