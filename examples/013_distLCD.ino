@@ -11,7 +11,7 @@ LiquidCrystal_I2C lcd(0x27,16,2);     //  0x3F or 0x27를 선택하여 주세요
 //고유주소가 LCD마다 다르기 때문입니다.
 
 #define trigPin1 8  // 초음파 발신핀 define은 쉽게말하면, 숫자의 이름을 정의해주는것. 
-#define echoPin1 9  // 초음파 수신핀
+#define echoPin1 7  // 초음파 수신핀
 
 //변수를 설정합니다. 
 long duration1, distance1;
