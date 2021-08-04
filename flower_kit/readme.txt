@@ -11,6 +11,8 @@
 
 완성된 화분 키트 영상
 
+    https://m.eduino.kr/product/detail.html?product_no=437
+
     https://youtu.be/xbuE3Wsoups
     
     
