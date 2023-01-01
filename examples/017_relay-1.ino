@@ -1,5 +1,5 @@
 /*
-Exploring Arduino - Code Listing 17: Relay-1
+Exploring Arduino - Code Listing 17-1: Relay
 Copyright 2020 SotoLAB ( https://github.com/sotoedu/arduino )
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License v3 as published by
