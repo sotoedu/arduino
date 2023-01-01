@@ -6,8 +6,8 @@ it under the terms of the GNU General Public License v3 as published by
 the Free Software Foundation.
 */
 
-const int SPEAKER=8;     //Speaker Pin       
-const int LIGHT=0;       //Lght Sensor on Analog Pin 0
+const int SPEAKER = 8;     //Speaker Pin       
+const int LIGHT = 0;       //Lght Sensor on Analog Pin 0
 
 void setup()
 {
