@@ -1,5 +1,11 @@
+/*
+Exploring Arduino - Code Listing 1: LED
+Copyright 2020 SotoLAB ( https://github.com/sotoedu/arduino )
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License v3 as published by
+the Free Software Foundation.
+*/
 
-// the setup function runs once when you press reset or power the board
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(LED_BUILTIN, OUTPUT);
