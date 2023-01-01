@@ -1,8 +1,16 @@
+/*
+Exploring Arduino - Code Listing 15: 7 Segments Button Anode - type
+Copyright 2020 SotoLAB ( https://github.com/sotoedu/arduino )
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License v3 as published by
+the Free Software Foundation.
+*/
+
 //#define CATHODE
 int segPins[] = {2, 3, 4, 5, 6, 7, 8, 9};
 int digit = 0;
-const int BUTTON1=11;   //The Button is connected to pin 11
-const int BUTTON2=12;   //The Button is connected to pin 12
+const int BUTTON1 = 11;   //The Button is connected to pin 11
+const int BUTTON2 = 12;   //The Button is connected to pin 12
 
 byte digits[10][7] = {
 #ifdef CATHODE
