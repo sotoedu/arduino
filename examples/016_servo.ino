@@ -1,8 +1,16 @@
+/*
+Exploring Arduino - Code Listing 16: Servo
+Copyright 2020 SotoLAB ( https://github.com/sotoedu/arduino )
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License v3 as published by
+the Free Software Foundation.
+*/
+
 #include <Servo.h>
 
 Servo myservo;
-const int SERVOPIN=9;   //The Servo is connected to pin 9
-const int POT=0;        //POT on Analog Pin 0
+const int SERVOPIN = 9;   //The Servo is connected to pin 9
+const int POT = 0;        //POT on Analog Pin 0
 
 void setup() {
   // put your setup code here, to run once:
