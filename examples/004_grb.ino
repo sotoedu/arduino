@@ -1,8 +1,8 @@
 /*
-Exploring Arduino - Code Listing 2-6: Toggling LED Nightlight
-http://www.exploringarduino.com/content/ch2
+Exploring Arduino - Code Listing 4: 3-LED-RGB
+https://github.com/sotoedu/arduino
 
-Copyright 2013 Jeremy Blum ( http://www.jeremyblum.com )
+Copyright 2020 Soto Jang ( https://github.com/sotoedu/arduino )
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License v3 as published by
 the Free Software Foundation.
