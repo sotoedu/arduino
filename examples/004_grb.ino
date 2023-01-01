@@ -1,16 +1,14 @@
 /*
-Exploring Arduino - Code Listing 4: 3-LED-RGB
-https://github.com/sotoedu/arduino
-
-Copyright 2020 Soto Jang ( https://github.com/sotoedu/arduino )
+Exploring Arduino - Code Listing 5: RGB LED Button
+Copyright 2020 SotoLAB ( https://github.com/sotoedu/arduino )
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License v3 as published by
 the Free Software Foundation.
 */
 
+const int GLED=8;    //Green LED on Pin 8
 const int BLED=9;    //Blue LED on Pin 9
-const int GLED=10;   //Green LED on Pin 10
-const int RLED=11;   //Red LED on Pin 11
+const int RLED=10;   //Red LED on Pin 10
 const int BUTTON=2;    //The Button is connected to pin 2
 
 boolean lastButton = LOW;    //Last Button State
@@ -117,4 +115,3 @@ void loop()
   if (ledMode == 8) ledMode = 0;
   setMode(ledMode);                              //change the LED state
 }
-
