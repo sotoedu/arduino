@@ -1,17 +1,20 @@
-// Pin 13 has an LED connected on most Arduino boards.
-// give it a name:
-int led = 13;
+/*
+Exploring Arduino - Code Listing 2: LED
+Copyright 2020 SotoLAB ( https://github.com/sotoedu/arduino )
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License v3 as published by
+the Free Software Foundation.
+*/
 
-// the setup routine runs once when you press reset:
-void setup() {                
-  // initialize the digital pin as an output.
-  pinMode(led, OUTPUT);     
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
-// the loop routine runs over and over again forever:
+// the loop function runs over and over again forever
 void loop() {
-  digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);               // wait for a second
-  digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);               // wait for a second
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);                       // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);                       // wait for a second
 }
