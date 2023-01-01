@@ -1,19 +1,15 @@
 /*
-Exploring Arduino - Code Listing 5-1: Arduino Music Player
-http://www.exploringarduino.com/content/ch5
-
-Copyright 2013 Jeremy Blum ( http://www.jeremyblum.com )
+Exploring Arduino - Code Listing 7: Melody Button
+Copyright 2020 SotoLAB ( https://github.com/sotoedu/arduino )
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License v3 as published by
 the Free Software Foundation.
 */
 
-//Plays a song on a speaker
-
 #include "pitches.h" //Header file with pitch definitions
 
-const int SPEAKER=8;  //Speaker Pin
-const int BUTTON=4;      //The Button is connected to pin 2
+const int SPEAKER = 8;  //Speaker Pin
+const int BUTTON = 4;      //The Button is connected to pin 2
 
 //Note Array
 int notes[] = {
@@ -52,4 +48,3 @@ void loop()
  }
  
 }
-
