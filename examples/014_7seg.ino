@@ -1,3 +1,11 @@
+/*
+Exploring Arduino - Code Listing 14: 7 Segments Anode - type
+Copyright 2020 SotoLAB ( https://github.com/sotoedu/arduino )
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License v3 as published by
+the Free Software Foundation.
+*/
+
 //#define CATHODE
 int segPins[] = {2, 3, 4, 5, 6, 7, 8, 9};
 
@@ -13,7 +21,7 @@ byte digits[10][7] = {
   { 1, 0, 1, 1, 1, 1, 1 }, // 6
   { 1, 1, 1, 0, 0, 0, 0 }, // 7
   { 1, 1, 1, 1, 1, 1, 1 }, // 8
-  { 1, 1, 1, 1, 0, 1, 1 } // 9
+  { 1, 1, 1, 1, 0, 1, 1 }  // 9
 
 #else
   // Anode
