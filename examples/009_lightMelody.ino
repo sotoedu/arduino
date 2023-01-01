@@ -1,14 +1,10 @@
 /*
-Exploring Arduino - Code Listing 3-3: Automatic Night Light Sketch
-http://www.exploringarduino.com/content/ch3
-
-Copyright 2013 Jeremy Blum ( http://www.jeremyblum.com )
+Exploring Arduino - Code Listing 9: Light Melody
+Copyright 2020 SotoLAB ( https://github.com/sotoedu/arduino )
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License v3 as published by
 the Free Software Foundation.
 */
-
-//Automatic Night Light Melody
 
 const int SPEAKER=8;     //Speaker Pin       
 const int LIGHT=0;       //Lght Sensor on Analog Pin 0
@@ -35,4 +31,3 @@ void loop()
   }
   
 }
-
