@@ -1,19 +1,15 @@
 /*
-Exploring Arduino - Code Listing 3-3: Automatic Night Light Sketch
-http://www.exploringarduino.com/content/ch3
-
-Copyright 2013 Jeremy Blum ( http://www.jeremyblum.com )
+Exploring Arduino - Code Listing 8: Light LED
+Copyright 2020 SotoLAB ( https://github.com/sotoedu/arduino )
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License v3 as published by
 the Free Software Foundation.
 */
 
-//Automatic Night Light
-
-const int RLED=9;        //Red LED on pin 9 (PWM)
-const int LIGHT=0;       //Lght Sensor on Analog Pin 0
-const int MIN_LIGHT=200; //Minimum expected light value
-const int MAX_LIGHT=900; //Maximum Expected Light value
+const int RLED = 9;        //Red LED on pin 9 (PWM)
+const int LIGHT = 0;       //Lght Sensor on Analog Pin 0
+const int MIN_LIGHT = 200; //Minimum expected light value
+const int MAX_LIGHT = 900; //Maximum Expected Light value
 int val = 0;             //variable to hold the analog reading
 
 void setup()
@@ -31,4 +27,3 @@ void loop()
   Serial.print("val: ");  
   Serial.println(val);
 }
-
