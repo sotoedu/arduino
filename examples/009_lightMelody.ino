@@ -12,8 +12,6 @@ const int LIGHT=0;       //Lght Sensor on Analog Pin 0
 void setup()
 {
   Serial.begin(9600);    //Serial Port at 9600 baud
-  
-  
 }
 
 void loop()
