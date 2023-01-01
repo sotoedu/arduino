@@ -1,12 +1,20 @@
+/*
+Exploring Arduino - Code Listing 10: Distance
+Copyright 2020 SotoLAB ( https://github.com/sotoedu/arduino )
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License v3 as published by
+the Free Software Foundation.
+*/
+
 //초음파센서 trig, echo핀 설정
-const int distTrigPin = 2;
-const int distEchoPin = 3;
+const int distEchoPin = 2;
+const int distTrigPin = 3;
  
 //3색 LED 핀 설정
-const int ledRedPin = 11;
-const int ledGreenPin = 10;
+const int ledGreenPin = 8;
 const int ledBluePin = 9;
- 
+const int ledRedPin = 10; 
+
 void setup() {
   pinMode(distTrigPin, OUTPUT);
   pinMode(distEchoPin, INPUT);
