@@ -21,7 +21,7 @@ void setup()
 void loop()
 {
   val = analogRead(LIGHT);                      //read the light sensor
-  val = map(val, MIN_LIGHT, MAX_LIGHT, 255, 0); //map the light reading
+  val = map(val, MIN_LIGHT, MAX_LIGHT, 255, 0); //map the light reading - map(value, fromLow, fromHigh, toLow, toHigh);
   val = constrain(val, 0, 255);                 //constrain light value
   analogWrite(RLED, val);                       //control the LED
   Serial.print("val: ");  
