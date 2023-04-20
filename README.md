@@ -7,5 +7,11 @@ Created by SotoLAB
     
     https://www.arduino.cc/download_handler.php
     
+    2 node-red packages
+    node-red-node-arduino
+    node-red-dashboard
+    node-red-node-serialport
+
+    
     
 
