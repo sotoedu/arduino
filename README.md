@@ -9,14 +9,14 @@ Created by SotoLAB
     
     2 node-red packages
     
-    win+r : cmd
+    win + r : cmd
     $ cd c:\workspace
     $ mkdir nodeTest
     $ cd nodeTest
     $ npm init -y
     $ node-red -p 1880 -u  .
     
-    Web : localhost:1880
+    Web browser URL - localhost:1880
     
     node-red-node-arduino
     node-red-dashboard
