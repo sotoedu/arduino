@@ -21,6 +21,9 @@ Created by SotoLAB
     node-red-node-arduino
     node-red-dashboard
     node-red-node-serialport
+    
+    dashboard deploy
+    http://localhost:1880/ui
 
     
     
